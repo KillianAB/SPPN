@@ -17474,3 +17474,166 @@ Processing by PagesController#home as HTML
 Completed 200 OK in 722ms (Views: 689.0ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-03-22 16:16:22 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (2.0ms)
+  Rendered shared/_navbar.html.erb (54.1ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+Completed 200 OK in 485ms (Views: 461.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/memberships" for 127.0.0.1 at 2017-03-22 16:16:26 +0100
+Processing by MembershipsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-03-22 16:16:26 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (142.2ms)
+  Rendered shared/_navbar.html.erb (3.4ms)
+  Rendered shared/_flashes.html.erb (0.9ms)
+Completed 200 OK in 429ms (Views: 191.4ms | ActiveRecord: 193.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-03-22 16:16:30 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Bd4qfLKJ/lQ6XlkXQnIpqRolefryTUHhecJWOcqmbDa2axpKFjT1wmxouG+3ozqMwpQ2bVO628o4Zb4kz90ToQ==", "user"=>{"email"=>"axel.avocatb@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (78.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "axel.avocatb@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (9.7ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", 2017-03-22 15:16:30 UTC], ["last_sign_in_at", 2017-03-21 04:59:39 UTC], ["sign_in_count", 8], ["updated_at", 2017-03-22 15:16:30 UTC], ["id", 2]]
+  [1m[35m (74.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/memberships
+Completed 302 Found in 530ms (ActiveRecord: 162.8ms)
+
+
+Started GET "/memberships" for 127.0.0.1 at 2017-03-22 16:16:31 +0100
+Processing by MembershipsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering memberships/index.html.erb within layouts/application
+  [1m[36mMembership Load (153.2ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" ORDER BY "memberships"."created_at" ASC[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered memberships/_card.html.erb (38.5ms)
+  Rendered memberships/index.html.erb within layouts/application (220.7ms)
+  Rendered shared/_navbar.html.erb (1.7ms)
+  Rendered shared/_flashes.html.erb (0.3ms)
+Completed 200 OK in 258ms (Views: 97.0ms | ActiveRecord: 157.6ms)
+
+
+Started GET "/memberships/new" for 127.0.0.1 at 2017-03-22 16:16:34 +0100
+Processing by MembershipsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering memberships/new.html.erb within layouts/application
+  Rendered memberships/_form.html.erb (52.0ms)
+  Rendered memberships/new.html.erb within layouts/application (53.4ms)
+  Rendered shared/_navbar.html.erb (2.2ms)
+  Rendered shared/_flashes.html.erb (0.4ms)
+Completed 200 OK in 92ms (Views: 87.5ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/memberships" for 127.0.0.1 at 2017-03-22 16:16:59 +0100
+Processing by MembershipsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Mst1zStlOUn72qqoZgCXQAwF6g9K3e1RWQTGFpScYE5LCnDd220+M78oPYC51jArp/QPFlb9vhKqQBifidu0Ow==", "membership"=>{"last_name"=>"AVOCAT-BENAN", "first_name"=>"a", "age"=>"a", "diplome"=>"a", "activity"=>"a", "massif"=>"a", "periode"=>"aa", "passmorgiou"=>"false", "passsormiou"=>"false", "siret"=>"aa", "description"=>"a", "photo_cache"=>""}, "commit"=>"Soumettre les modifications"}
+Unpermitted parameter: passmorgiou
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  Rendering memberships/new.html.erb within layouts/application
+  Rendered memberships/_form.html.erb (16.8ms)
+  Rendered memberships/new.html.erb within layouts/application (17.9ms)
+  Rendered shared/_navbar.html.erb (1.8ms)
+  Rendered shared/_flashes.html.erb (0.4ms)
+Completed 200 OK in 51ms (Views: 44.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/memberships" for 127.0.0.1 at 2017-03-22 16:17:09 +0100
+Processing by MembershipsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/qzRUHCy5ImYhB3kk111bE7icR++C834qf7jEkX71OuHbdRAgLrj89x2isxMi9IH5ROUBqIrnrtauj2bWLwAng==", "membership"=>{"last_name"=>"AVOCAT-BENAN", "first_name"=>"a", "age"=>"a", "diplome"=>"a", "activity"=>"a", "massif"=>"a", "periode"=>"aa", "passmorgiou"=>"false", "passsormiou"=>"false", "siret"=>"aa", "description"=>"a", "photo"=>#<ActionDispatch::Http::UploadedFile:0x007f3178783330 @tempfile=#<Tempfile:/tmp/RackMultipart20170322-24439-1m9ajxa.jpg>, @original_filename="Acceuil Calanques.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"membership[photo]\"; filename=\"Acceuil Calanques.jpg\"\r\nContent-Type: image/jpeg\r\n">, "photo_cache"=>""}, "commit"=>"Soumettre les modifications"}
+Unpermitted parameter: passmorgiou
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (17.8ms)[0m  [1m[32mINSERT INTO "memberships" ("first_name", "last_name", "diplome", "age", "activity", "massif", "periode", "passsormiou", "siret", "description", "user_id", "photo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["first_name", "a"], ["last_name", "AVOCAT-BENAN"], ["diplome", "a"], ["age", "a"], ["activity", "a"], ["massif", "a"], ["periode", "aa"], ["passsormiou", false], ["siret", "aa"], ["description", "a"], ["user_id", 2], ["photo", "ugddus7bcyj8pfl0oke6.jpg"], ["created_at", 2017-03-22 15:17:09 UTC], ["updated_at", 2017-03-22 15:17:09 UTC]]
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "memberships" SET "photo" = 'image/upload/v1490195833/ugddus7bcyj8pfl0oke6.jpg' WHERE "memberships"."id" = $1[0m  [["id", 21]]
+  [1m[35m (10.7ms)[0m  [1m[35mCOMMIT[0m
+  Rendering membership_mailer/creation_confirmation.html.erb within layouts/mailer
+  Rendered membership_mailer/creation_confirmation.html.erb within layouts/mailer (0.5ms)
+MembershipMailer#creation_confirmation: processed outbound mail in 199.6ms
+Sent mail to axel.avocatb@gmail.com (2205.4ms)
+Date: Wed, 22 Mar 2017 16:17:13 +0100
+From: sppnature@gmail.com
+To: axel.avocatb@gmail.com
+Message-ID: <58d29579cf960_5f772b281190413882318@axelab-G75VW.mail>
+Subject: =?UTF-8?Q?Adh=C3=A9sion_SPPN?=
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    Bonjour,
+<br>
+Nous avons bien recus votre demande d'adh=C3=A9sion au sein du SPPN
+<br>
+Celle-ci sera trait=C3=A9e dans les plus bref d=C3=A9lais par un administ=
+rateur.
+Merci pour votre comp=C3=A9hension.
+<br>
+Le Syndicat des Professionnels de Pleine Nature.
+
+  </body>
+</html>
+
+Redirected to http://localhost:3000/memberships/21
+Completed 302 Found in 6655ms (ActiveRecord: 30.0ms)
+
+
+Started GET "/memberships/21" for 127.0.0.1 at 2017-03-22 16:17:16 +0100
+Processing by MembershipsController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMembership Load (0.4ms)[0m  [1m[34mSELECT  "memberships".* FROM "memberships" WHERE "memberships"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  Rendering memberships/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered memberships/show.html.erb within layouts/application (6.2ms)
+  Rendered shared/_navbar.html.erb (2.9ms)
+  Rendered shared/_flashes.html.erb (0.6ms)
+Completed 200 OK in 60ms (Views: 51.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/memberships" for 127.0.0.1 at 2017-03-22 16:17:22 +0100
+Processing by MembershipsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering memberships/index.html.erb within layouts/application
+  [1m[36mMembership Load (0.6ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships" ORDER BY "memberships"."created_at" ASC[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered memberships/_card.html.erb (4.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered memberships/_card.html.erb (2.7ms)
+  Rendered memberships/index.html.erb within layouts/application (10.9ms)
+  Rendered shared/_navbar.html.erb (2.2ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+Completed 200 OK in 51ms (Views: 46.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-03-22 16:18:28 +0100
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.7ms)
+  Rendered shared/_navbar.html.erb (2.5ms)
+  Rendered shared/_flashes.html.erb (0.5ms)
+Completed 200 OK in 54ms (Views: 52.9ms | ActiveRecord: 0.0ms)
+
+
