@@ -1,0 +1,25 @@
+<div class="container">
+
+  <div class="form-group col-xs12 col-sm6 col-smoffset-3">
+    <%= simple_form_for(@membership) do |f| %>
+    <%= f.error_notification %>
+
+      <%= f.input :last_name, label:"Nom", placeholder: "NOM", error: 'Veuillez renseigner votre nom'%>
+      <%= f.input :first_name,label:"Prénom", placeholder: "Prénom" %>
+      <%= f.input :age, label:"Date de naissance", placeholder: "jj/mm/aaaa" %>
+      <%= f.input :diplome, label:"Diplômes", placeholder: "BE Escalade..." %>
+      <%= f.input :activity, label:"Activités", placeholder: "Activités" %>
+      <%= f.input :massif, label:"Massif d'intervention", placeholder: "Massif d'intervention" %>
+      <%= f.input :periode, label:"Période d'intervention", placeholder: "Période d'intervention" %>
+      <%= f.input :passmorgiou, as: :boolean, checked_value: true, unchecked_value: false, label:"Demande de Pass pour Morgiou" %>
+      <%= f.input :passsormiou, as: :boolean, checked_value: true, unchecked_value: false, label:"Demande de Pass pour Sormiou" %>
+      <%= f.input :siret, label:"Siret", placeholder: "Siret" %>
+      <%= f.input :description, label:"Description", placeholder: "Petit descriptif" %>
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
+
+      <%= f.submit class: "btn btn-primary", value: "Soumettre les modifications" %>
+
+    <% end %>
+  </div>
+</div>

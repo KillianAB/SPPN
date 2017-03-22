@@ -1,0 +1,24 @@
+<div class="card">
+
+  <div class="avatar-card">
+    <%= link_to " ", membership, class: "card-link" %>
+    	<%= cl_image_tag membership.photo, :width=>150, :height=>150, :crop=>"thumb", style: "border-radius: 50%;"%>
+	</div>
+
+	    <h2><%= membership.last_name %></h2>
+	    <h2><%= membership.first_name %></h2>
+
+  <div class="card-tools">
+    <% if policy(membership).update? %>
+      <%= link_to edit_membership_path(membership) do %>
+        <i class="fa fa-pencil-square-o picto-card" aria-hidden="true"></i>
+      <% end %>
+    <% end %>
+
+    <% if policy(membership).destroy? %>
+      <%= link_to membership, method: :delete, data: { confirm: 'Are you sure?' } do %>
+        <i class="fa fa-trash picto-card" aria-hidden="true"></i>
+      <% end %>
+    <% end %>
+  </div>
+</div>

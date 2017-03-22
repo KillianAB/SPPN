@@ -1,0 +1,17 @@
+<div class="text-center">
+  <h1>Liste des membres</h1>
+  <% if policy(Membership).create? %>
+        <%= link_to 'Formulaire d\'inscription', new_membership_path, class: 'btn btn-success' %>
+  <% end %>
+</div>
+<div class="container">
+  <div class="row">
+    <% @memberships.each do |membership| %>
+
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <%= render "card", membership: membership %>
+      </div>
+
+    <% end %>
+  </div>
+</div>

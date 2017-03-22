@@ -1,0 +1,28 @@
+<div class="class text-center">
+  <% content_for(:title_tag) do %>
+  Read <%= @membership.last_name %> on SPPN
+  <% end %>
+</div>
+
+
+      <div class="class text-center">
+        <% if @membership.photo? %>
+          <%= cl_image_tag @membership.photo, radius: 20, width: 300, height: 300, crop: :thumb %>
+        <% end %>
+
+        <h2><%= @membership.last_name %></h2>
+        <h2><%= @membership.first_name %></h2>
+        <p><%= @membership.diplome %></p>
+        <p><%= @membership.age %></p>
+        <p><%= @membership.activity %></p>
+        <p><%= @membership.massif %></p>
+        <p><%= @membership.periode %></p>
+        <p><%= @membership.description %></p>
+
+
+        <% if policy(@membership).edit? %>
+          <%= link_to 'Edit', edit_membership_path(@membership) %>
+        <% end %>
+        <%= link_to 'Back', memberships_path %>
+      </div>
+

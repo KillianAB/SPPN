@@ -1,0 +1,184 @@
+Mémos
+
+Ctrl + p = recherche
+Ctrl + Maj + p = action
+Ctrl + d = selection multiple 1 par 1
+Ctrl + Alt + T = new terminal
+Ctrl + / = commentaire
+ctrl + maj + i => inspecteur google chrome
+
+
+Emmet : Simplifie HTML avec "H1+H2+p+img" ou "li*3" etc... puis Tab
+Librairie de composent CSS : http://lewagon.github.io/ui-components/
+Flex Box : Div amélioré
+
+
+
+INSPIRATION:
+
+https://dribbble.com/ => for everything
+http://www.awwwards.com/ => for websites
+http://www.calltoidea.com/ => for UI components
+https://uimovement.com/ => for dynamic UI components
+
+
+
+
+HTML/CSS SNIPPETS:
+
+http://codepen.io/
+
+
+
+
+BOOTSTRAP BOILERPLATE:
+
+GRID reponsive
+https://github.com/lewagon/bootstrap-boilerplate
+http://getbootstrap.com/css/
+http://getbootstrap.com/javascript/
+
+
+
+
+MIDDLEMAN:
+
+Convertis .rb et .scss en .html et .css
+Instant déploy
+
+
+
+
+EVENTS/CALLBACKS & JQUERY PLUGINS:
+
+Animation
+
+
+
+
+RAILS BASICS:
+
+https://rubygems.org/
+https://www.ruby-toolbox.com/
+
+rails new \
+  -T --database postgresql \
+  -m https://raw.githubusercontent.com/lewagon/rails-templates/master/devise.rb \
+  CHANGE_THIS_TO_YOUR_RAILS_APP_NAME
+
+
+
+# Gemfile
+gem 'faker'
+
+bundle install
+
+git init
+git add .
+git commit -m "nom_de_sauvegarde"
+
+
+
+rails g model Example name:string diplôme:string catégorie:string age:string
+rails g scaffold Example name:string diplôme:string catégorie:string age:string
+rails generate migration AddChefToRestaurants chef:string
+
+rails db:migrate
+
+git lg => voir sauvergarde
+gst => ???
+background-image: url("http://unsplash.it/1000/500")
+
+rails db:rollback STEP=3
+
+rails destroy model Restaurant
+
+
+CONTENT_FOR & TITLE marche pas...
+
+CONTENT_FOR & DESCRIPTION non plus...
+
+mettre un user avec un seul formulaire (changer has_many)
+erreur sur diapo PUNDIT SETUP (1) "" au lieux de ''
+
+mettre les placeholder
+changer "drescriptif"
+changer "Siret"
+<a href </a> a changer!
+
+
+
+
+float
+helper
+
+
+
+bundle install
+rails db:migrate
+
+rails new \
+  -T --database postgresql \
+  -m https://raw.githubusercontent.com/lewagon/rails-templates/master/devise.rb \
+  CHANGE_THIS_TO_YOUR_RAILS_APP_NAME
+
+rails g scaffold Membership first_name:string last_name:string diplome:string age:string activity:string massif:string periode:string passmorgiou:boolean passsormiou:boolean siret:string description:text user:references photo:string
+
+rails g migration AddAdminToUsers admin:boolean
+
+rails g pundit:install
+
+rails db:migrate
+
+
+
+      <% if @membership.photo? %>
+        <%= cl_image_tag @membership.photo.path, height: 300, width: 400, crop: :fill %>
+      <% end %>
+
+
+      <% if @membership.photo? %>
+        <%= image_tag @membership.photo.url(:bright_face) %>
+      <% end %>
+
+
+
+
+
+
+3.8 Using the change Method
+The change method is the primary way of writing migrations. It works for the majority of cases, where Active Record knows how to reverse the migration automatically. Currently, the change method supports only these migration definitions:
+
+add_column
+add_foreign_key
+add_index
+add_reference
+add_timestamps
+change_column_default (must supply a :from and :to option)
+change_column_null
+create_join_table
+create_table
+disable_extension
+drop_join_table
+drop_table (must supply a block)
+enable_extension
+remove_column (must supply a type)
+remove_foreign_key (must supply a second table)
+remove_index
+remove_reference
+remove_timestamps
+rename_column
+rename_index
+rename_table
+
+
+background-image: url("http://res.cloudinary.com/ddg1oj7vj/image/upload/v1488010235/Acceuil_Calanques_wulfna.jpg");
+background: image-url("http://res.cloudinary.com/ddg1oj7vj/image/upload/v1488010235/Acceuil_Calanques_wulfna.jpg");
+
+créer une branche : git checkout -b bla-bla-bla
+voir le status de ton dossier : git status
+voir la différence dans les dossiers : git diff
+
+git checkout master
+git push origin bla-bla-bla
+git push heroku master
