@@ -5,6 +5,10 @@ class MembershipPolicy < ApplicationPolicy
     end
   end
 
+  def index?
+    return true
+  end
+
   def create?
     return true
   end
@@ -18,14 +22,15 @@ class MembershipPolicy < ApplicationPolicy
   end
 
   def destroy?
+    return false unless user
     user.admin
   end
 
+private
 
-  private
-
-    def user_is_owner_or_admin?
-      user.admin || record.user == user
-    end
+  def user_is_owner_or_admin?
+    return false unless user
+    user.admin || record.user == user
+  end
 
 end
