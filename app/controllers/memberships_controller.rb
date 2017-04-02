@@ -6,7 +6,7 @@ class MembershipsController < ApplicationController
   # GET /memberships.json
   def index
     # @memberships = Membership.all
-    @memberships = policy_scope(Membership).order(created_at: :asc)
+    @memberships = policy_scope(Membership).order("RANDOM()")
   end
 
   # GET /memberships/1
