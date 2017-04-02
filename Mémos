@@ -179,7 +179,7 @@ créer une branche : git checkout -b bla-bla-bla
 voir le status de ton dossier : git status
 voir la différence dans les dossiers : git diff
 
-git checkout master
 git push origin bla-bla-bla
+git checkout master
 git pull origin master
 git push heroku master
