@@ -5,8 +5,8 @@
     	<%= cl_image_tag membership.photo, :width=>150, :height=>150, :crop=>"thumb", style: "border-radius: 50%;"%>
 	</div>
 
-	    <h2><%= membership.last_name %></h2>
-	    <h2><%= membership.first_name %></h2>
+	    <h2><%= membership.last_name.upcase %></h2>
+	    <h2><%= membership.first_name.capitalize %></h2>
 
   <div class="card-tools">
     <% if policy(membership).update? %>

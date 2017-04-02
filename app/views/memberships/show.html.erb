@@ -10,8 +10,8 @@
           <%= cl_image_tag @membership.photo, radius: 20, width: 300, height: 300, crop: :thumb %>
         <% end %>
 
-        <h2><%= @membership.last_name %></h2>
-        <h2><%= @membership.first_name %></h2>
+        <h2><%= @membership.last_name.upcase %></h2>
+        <h2><%= @membership.first_name.capitalize %></h2>
         <p><%= @membership.diplome %></p>
         <p><%= @membership.age %></p>
         <p><%= @membership.activity %></p>
