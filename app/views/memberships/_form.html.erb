@@ -5,17 +5,17 @@
     <%= f.error_notification %>
 
       <%= f.input :last_name, label:"Nom", placeholder: "NOM", error: 'Veuillez renseigner votre nom'%>
-      <%= f.input :first_name,label:"Prénom", placeholder: "Prénom" %>
-      <%= f.input :age, label:"Date de naissance", placeholder: "jj/mm/aaaa" %>
-      <%= f.input :diplome, label:"Diplômes", placeholder: "BE Escalade..." %>
-      <%= f.input :activity, label:"Activités", placeholder: "Activités" %>
-      <%= f.input :massif, label:"Massif d'intervention", placeholder: "Massif d'intervention" %>
-      <%= f.input :periode, label:"Période d'intervention", placeholder: "Période d'intervention" %>
+      <%= f.input :first_name,label:"Prénom", placeholder: "Prénom", error: 'Veuillez renseigner votre prénom' %>
+      <%= f.input :age, label:"Date de naissance", placeholder: "jj/mm/aaaa", error: 'Veuillez renseigner votre date de naissance' %>
+      <%= f.input :diplome, label:"Diplômes", placeholder: "BE Escalade...", error: 'Veuillez renseigner au moins un diplômes' %>
+      <%= f.input :activity, label:"Activités", placeholder: "Activités", error: 'Veuillez renseigner au moins une activitée' %>
+      <%= f.input :massif, label:"Massif d'intervention", placeholder: "Massif d'intervention", error: "Veuillez renseignerau moins un massif d'intervention" %>
+      <%= f.input :periode, label:"Période d'intervention", placeholder: "Période d'intervention", error: "Veuillez renseigner une période d'intervention" %>
       <%= f.input :passmorgiou, as: :boolean, checked_value: true, unchecked_value: false, label:"Demande de Pass pour Morgiou" %>
       <%= f.input :passsormiou, as: :boolean, checked_value: true, unchecked_value: false, label:"Demande de Pass pour Sormiou" %>
-      <%= f.input :siret, label:"Siret", placeholder: "Siret" %>
-      <%= f.input :description, label:"Description", placeholder: "Petit descriptif" %>
-      <%= f.input :photo %>
+      <%= f.input :siret, label:"SIRET", placeholder: "SIRET", error: 'Veuillez renseigner votre SIRET' %>
+      <%= f.input :description, label:"Description", placeholder: "Petit descriptif", error: 'Veuillez remplir un petit descriptif' %>
+      <%= f.input :photo, error: 'Veuillez ajouter une photo' %>
       <%= f.input :photo_cache, as: :hidden %>
 
       <%= f.submit class: "btn btn-primary", value: "Soumettre les modifications" %>
