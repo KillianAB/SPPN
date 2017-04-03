@@ -13,12 +13,5 @@ class Membership < ApplicationRecord
   validates :description, presence: true
   validates :photo, presence: true
 
-  after_create :send_creation_confirmation_email
-
-  private
-
-  def send_creation_confirmation_email
-    MembershipMailer.creation_confirmation(self).deliver_now
-  end
 
 end
