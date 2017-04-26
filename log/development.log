@@ -18602,3 +18602,52 @@ Processing by MembershipsController#index as HTML
 Completed 200 OK in 4538ms (Views: 68.4ms | ActiveRecord: 4392.5ms)
 
 
+Started GET "/admin" for 127.0.0.1 at 2017-04-26 19:17:58 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /usr/local/opt/rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-ec24dd568330/app/views/active_admin/page/index.html.arb
+  Rendered /usr/local/opt/rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-ec24dd568330/app/views/active_admin/page/index.html.arb (1363.7ms)
+Completed 200 OK in 1537ms (Views: 1417.4ms | ActiveRecord: 23.9ms)
+
+
+Started GET "/admin/comments" for 127.0.0.1 at 2017-04-26 19:18:02 +0200
+Processing by Admin::CommentsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /usr/local/opt/rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-ec24dd568330/app/views/active_admin/resource/index.html.arb
+  [1m[35m (204.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = $1[0m  [["namespace", "admin"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["namespace", "admin"], ["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT DISTINCT "active_admin_comments"."resource_type" FROM "active_admin_comments" ORDER BY resource_type asc[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT DISTINCT "active_admin_comments"."author_type" FROM "active_admin_comments" ORDER BY author_type asc[0m
+  Rendered /usr/local/opt/rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-ec24dd568330/app/views/active_admin/resource/index.html.arb (487.7ms)
+Completed 200 OK in 534ms (Views: 302.7ms | ActiveRecord: 210.2ms)
+
+
+Started GET "/admin/memberships" for 127.0.0.1 at 2017-04-26 19:18:04 +0200
+Processing by Admin::MembershipsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /usr/local/opt/rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-ec24dd568330/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "memberships" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "memberships" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "memberships"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "memberships" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mMembership Load (0.7ms)[0m  [1m[34mSELECT  "memberships".* FROM "memberships" ORDER BY "memberships"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered /usr/local/opt/rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-ec24dd568330/app/views/active_admin/resource/index.html.arb (219.8ms)
+Completed 200 OK in 235ms (Views: 222.4ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2017-04-26 19:18:08 +0200
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /usr/local/opt/rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-ec24dd568330/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "users" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mMembership Load (0.5ms)[0m  [1m[34mSELECT "memberships".* FROM "memberships"[0m
+  Rendered /usr/local/opt/rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/bundler/gems/activeadmin-ec24dd568330/app/views/active_admin/resource/index.html.arb (155.0ms)
+Completed 200 OK in 164ms (Views: 157.4ms | ActiveRecord: 2.3ms)
+
+
