@@ -1,5 +1,5 @@
 ActiveAdmin.register Membership do
-  permit_params :first_name, :last_name, :diplome, :age, :passmorgiou, :passsormiou, :siret, :mail, :user_id
+  permit_params :first_name, :last_name, :age, :mail, :diplome, :passmorgiou, :passsormiou, :siret, :user_id
 
     index do
       selectable_column
